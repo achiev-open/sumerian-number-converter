@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sumerian number generator</title>
+  <meta name="description" content="An open source Sumerian number generator">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="scss/main.scss">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section class="container-fluid">
+    <h1>Sumerian number convertor</h1>
+
+    <form id="sumerian-converter">
+      <label>Number to convert :</label>
+      <input id="base-number" name="base" type="number" min="1" />
+      <input type="submit" value="Convert">
+    </form>
+
+    <table id="converter-output">
+      <tr>
+        <th>Formula</th>
+        <td>
+          <output form="sumerian-converter" id="formula"></output>
+        </td>
+      </tr>
+      <tr>
+        <th>Sexagesimal</th>
+        <td>
+          <output form="sumerian-converter" id="sexagesimal"></output>
+        </td>
+      </tr>
+      <tr>
+        <th>Cuneiform</th>
+        <td>
+          <div id="sumerian-display"></div>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

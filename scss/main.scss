@@ -1,0 +1,155 @@
+$yellow: #FFF01C;
+$red: #D50011;
+$black: #000000;
+$blue: #195290;
+$orange: #E85033;
+$green: #0B6136;
+$white: #FFFFFF;
+
+$number-color: $blue;
+
+// Global layout
+body {
+  font-family: 'Baloo 2', cursive;
+  background-color: $white;
+  color: $black;
+
+  section {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+// Form
+#sumerian-converter {
+  background-color: lighten($blue, 50);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  width: calc(100% - 30px);
+  margin-bottom: 25px;
+  padding: 15px;
+
+  label {
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  input {
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 1em;
+    outline: none;
+    border: none;
+  }
+  input[type="number"] {
+    flex-grow: 1;
+  }
+  input[type="submit"] {
+    background-color: $blue;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+// Output
+#converter-output {
+  background-color: lighten($black, 75);
+  width: 100%;
+  border-radius: 15px;
+  border-collapse: collapse;
+
+  tr:not(:last-child) {
+    th, td {
+      border-bottom: 1px solid $black;
+    }
+  }
+  th, td {
+    padding: 10px 15px;
+  }
+  th {
+    width: 150px;
+    text-align: left;
+  }
+}
+
+#sumerian-display {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+
+  .s-number {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 60px;
+    margin: 0 10px;
+    .s-1 {
+      display: inline-block;
+      position: relative;
+      width: 10px;
+      height: 40px;
+      background-color: $number-color;
+      margin-left: 10px;
+      &:nth-child(1n+4) {
+        top: -15px;
+      }
+      &:nth-child(1n + 7) {
+        top: -30px;
+      }
+      &:before {
+        content: "";
+        position: relative;
+        left: -15px;
+        top: 15px;
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+
+        border-top: 20px solid $number-color;
+      }
+    }
+
+    .s-10 {
+      display: inline-block;
+      position: relative;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-right:20px solid $number-color;
+
+      &:nth-child(1n+4) {
+        top: -10px;
+        left: 20px;
+      }
+      &:before {
+        content: "";
+        display: inline-block;
+        height: 5px;
+        width: 30px;
+        background-color: $number-color;
+        transform: rotate(-45deg);
+        position: absolute;
+        left: 0;
+        top: -14px;
+      }
+      &:after {
+        content: "";
+        display: inline-block;
+        height: 5px;
+        width: 30px;
+        background-color: $number-color;
+        transform: rotate(45deg);
+        position: absolute;
+        left: 0;
+        top: 9px;
+      }
+    }
+  }
+}
