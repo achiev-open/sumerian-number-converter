@@ -33,19 +33,15 @@ function setDisplay(b60Number, container) {
     const domNumberUnit = document.createElement('div');
     domNumberUnit.classList.add('s-number');
     container.appendChild(domNumberUnit);
+    if (!values[1]) domNumberUnit.style.minWidth = '60px';
     for (let i = 0; i < values[1]; i++) {
       const domSymbol = document.createElement('div');
       domSymbol.classList.add('s-1');
       domNumberUnit.appendChild(domSymbol);
     }
   });
-  // <div class="s-number">
-  //   <div class="s-10"></div>
-  // </div>
-  console.log(b60Number);
 }
 
-// submitBtn.onclick = (e) => {
 form.onsubmit = (e) => {
   e.preventDefault();
   const b10Number = +document.getElementById('base-number').value;
@@ -60,5 +56,4 @@ form.onsubmit = (e) => {
   document.getElementById('sexagesimal').value = b60Number.join(` `);
   const container = document.getElementById('sumerian-display');
   setDisplay(b60Number, container);
-  return false;
 }
